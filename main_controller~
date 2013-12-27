@@ -1,0 +1,35 @@
+CONTROLLER => MAIN
+	index
+		=> it's main function is to check that user have selected which of the follwing(TI, TC, IL). By default it is alway	s TC (@all_tc). 
+		=> make a html format of params, n/w status, summary_counts.
+
+	add_delete_user_interests
+		=> it create or destroy target interest of current user from the database.
+
+	plans
+
+	premium
+
+	upgrade_to_basic
+
+	upgrade_to_premium
+
+	new_target_companies
+
+	share_contacts
+
+VIEWS
+	index.html
+		=> show the main page
+			*** tc.html
+				=> if 'tc' display TC else IL
+				=> tc -> filter_wizard_path (helps in displaying all the news by clicking "MORE" option.
+				=> IL -> js.viewmoreIL
+			*** ti.html
+				=> show the right pane data
+			
+			*** filter_wizard_path
+				=> show ti news
+				
+			*** news/fetch_news
+				=> M-> find_by_target_interests

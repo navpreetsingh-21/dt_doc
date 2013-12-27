@@ -1,0 +1,38 @@
+perform
+
+	hunt(task)		
+		hunt_target_companies_feed(task)
+			=> find companies of user and save in format {id: name}
+			=> find industry leaders and save
+			=> Arrange start point to fetch news for IL 
+			process_news(feed_entries, feed_domain, feed_record = nil, news_soure_id = nil, company_id = nil)
+				prepare_news_meta(feed_record, company_id)
+					=> If news_type id specified or not
+				=> Process news feeds
+				=> if want to save then tag
+				meta_tagging(news, args = {})
+					=> Use news_type to tag
+				=> mark interesting if news for the target company
+			update_industry_leaders_news_cache(industry_leaders)
+				=> Write into cache news of IL
+		Linksv => fetch_news
+		hunt_registered_feeds(task)
+			=> fetch news on the url specified.
+			args_for_feed_record(url)
+				=> make a url for the company.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

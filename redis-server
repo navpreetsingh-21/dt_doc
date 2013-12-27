@@ -1,0 +1,11 @@
+in one terminal check the wiki for it.
+redis-server
+QUEUE=* rake environment resque:work
+
+in another terminal
+rake resque:scheduler
+
+Clear All Delayed Jobs
+
+Resque.reset_delayed_queue
+

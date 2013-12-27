@@ -1,0 +1,102 @@
+user-name: si@foundation3.com
+password: annam123
+pswd_my_user: 4e7a8d5212, efda0446fd
+
+DATABASE db
+	interesting_news_types
+	companies_in_news
+	news
+	news_feeds
+	
+CONTROLLER
+	ADMIN
+		news_controller.rb => Just commented the line having the news_type
+		news_source_controller.rb => Just commented the line having the news_type
+		
+	API/V1
+		news_controller.rb => Include 'ti', which when deleted will automatically delete the news_type from this file.
+		news_types_controller.rb => find the target interest selected by user
+		users_controller.rb => give a message on addition or deletion of TI
+	main_controller.rb
+		=> has a parameter of TI in index and check news type of it.
+		=> Allows user to add or delete TI
+	news_controller.rb
+		=> fetch news for the controller as per TI and TL. Check login of User.
+	registration_controller.rb
+		=> first time user inputs. Just delete target interest function. 
+	wizard_controller.rb
+		=> Delete target interest page and code of news_type.
+
+MODELS
+	company.rb
+	interesting_news_type.rb
+	interesting_news.rb
+		=> for a user who is interested in news type
+	news_feed_observer.rb
+	news_feed.rb
+	news_type.rb
+	news.rb
+		=> headline of news with or without news_type
+		=> def news_type for heading or MISC.
+		=> news_summary for target intt. news
+		=> interesting as marked by user for various news_types
+		=> find news_type by target interest news		
+	user.rb
+		=> has many NT
+		=> def NT_id = to create interesting NT for user
+		=> fetch news
+			=> have a condition to fetch news on news_type
+			=> inner join interesting news type id with news NT id
+		=> is news type interesting => include interesting news for user
+		=> Generating CSV reports for marketing dept.
+			=> user report
+			=> generate report rows
+
+VIEWS
+	ADMIN
+		COMPANIES/_generic_companies.html.erb => check box tag for generic companies
+		NEWS
+			_form.html.erb
+			_news_type_data.html.erb
+			_news.html.erb
+			index.html.erb => have a news type column
+			show.html.erb
+			tc_news_audit.html.erb => have a NT column for admin to select.
+		NEWS_SOURCES
+			_feed.html.erb
+			edit.html.erb => have a column of NT
+		USERS/_interest_form.html.erb
+	HOME/developer_guide.html.erb => API v1 page which contains news_type paragraphs.
+	LAYOUTS/_user_news_interests.html.erb
+	MAIN
+		_ti.html.erb
+		index.html.erb
+	NEWS
+		_news_items.html.erb
+		_ti_news_items.html.erb
+		_ti_news.html.erb
+	REGISTRATIONS/add_target_interests.html.erb => ask the interests of new user
+	REMINDERS/index.html.erb => when user set a reminder
+	USER_NOTIFIER/DEAL_ALERT/_target_interests_news.html.erb
+	WIZARD => takes user choice for his TI
+		_ti.html.erb
+		filter.html.erb
+
+LIB
+	
+	linksv.rb => adding types to news on people, companies or just news.
+		=> bringing news for different news_types
+	news_grinder.rb  => FETCH NEWS FOR VARIOUS 'NT' AS 'TI' OF USERS.
+	news_hunter.rb => Use of news type in news_meta and meta_tagging.
+
+PUBLIC
+	javascripts/news-panel.js
+	javascripts/application.js
+	stylesheets/news-panel.css
+	
+SPEC	
+	CONTROLLERS/API/V1/news_controller_spec.rb
+	FACTORIES/news_type.rb
+	FACTORIES/news.rb
+	MODELS/news_spec.rb
+			

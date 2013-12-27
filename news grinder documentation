@@ -1,0 +1,47 @@
+'NGS' is an abbreviation used for "NEWS_GRINDER_SERVER"
+'TC' is an abbreviation used for "TARGETED COMPANIES"
+'IL' is an abbreviation used for "INDUSTRY LEADERS"
+'PPD' is an abbreviation used for "POST-PUT-DELETE"
+1. def initial_registration_of_news_request
+		Send the list of companies whose news is to fetch.
+		
+		How to POST news
+		a. Go to terminal and open the foundation3 folder
+		b. Type "ruby script/console"
+		c. Type "NewsGrinder.initial_registration_of_news_request"
+	
+		1.1 def initial_registration_of_all_tc_news_request
+				It collects all the names of TC added by USERS and IL whose news is to fetch. 
+			
+				1.1.1 def get_unique_tc_and_il
+						Gather TC and IL names and include them in the hash in format
+						(COMPANY [ID] = COMPANY.NAME)
+						Return the hash in array form.
+		
+				1.1.2 def add_update_tc_news_request(id, name, update = false)
+						It merge the details of companies list in a URL with an API key to hit at NGS end for PPD
+		
+						1.1.2.1 def register_news_request(params, update)
+									Convert URL to JSON.
+									RESTCALL the PUT or POST on a condtion of UPDATION. 
+									form: "#{url}/#{ref_id}"
+									url = "/api/v1/news_sources"
+									ref_id = unique ID provided to a company.
+								
+						1.1.2.2 def handle_exception(e)
+									It gives an exception:
+										RestClient::BadRequest Exception: 400 Bad Request	
+				
+				1.1.3 def deregister_news_request(params)
+						If any user is destroyed or he/she deletes any company. Then this function checks if any other 						user is also looking for news w.r.t. this company. If not, then destroy that company from NGS and 
+					database.
+		
+		1.2 def initial_registration_of_all_ti_news_request
+				It function similar to above one but it sends array of news resouces instead of companies list.
+		
+		1.3 def process_news(feed_entries)
+				It collects news from the NGS, parse the data, find reference-id and reference-type w.r.t each news 
+			and send it to NEWS ENRICHER.
+						ref-id: ID of the company
+						ref-type: BLOG for a company, SEARCH for news source.
+		

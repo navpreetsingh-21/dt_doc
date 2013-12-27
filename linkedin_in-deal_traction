@@ -1,0 +1,175 @@
+CONTROLLERS
+	ADMIN
+		home_controller.rb
+		users_controller.rb
+	API
+		v1/contacts_controller.rb
+		v1/users_controller.rb
+	FM
+		contacts_controller.rb
+	NETWORK
+		contacts_controller.rb	
+		social_controller.rb
+		home_controller.rb
+	RM
+		companies_controller.rb
+	accoutn_controller.rb
+	application_controller.rb
+	referral_controller.rb
+	third_party_authentication_controller.rb
+	
+HELPERS
+	application_helper.rb
+
+MODELS
+	company_connections_count.rb
+	company.rb
+	contact.rb
+	interesting_news.rb
+	jigsaw_task.rb
+	linkedin_auth.rb
+	linkedin_status.rb
+	linkedin_throttle_linit.rb
+	news.rb
+	person_connections.count.rb
+	person.rb
+	referral.rb
+	share.rb
+	social_credential.rb
+	third_party_authentication.rb
+	user.rb
+	
+VIEWS
+	ACCOUNT
+		_edit.html.erb
+		edit.html.erb
+	ADMIN
+		home/linkedin_upload.html.erb
+		users/manage.html.erb
+	FM
+		contacts/contact.html.erb
+	HOME
+		_alert_on_unsubscribe.html.erb
+		_login_form.html.erb
+		developer_guide.html.erb
+		freetestdrive.erb
+	LAYOUTS
+		_lhs_menu_admin.html.erb
+		_network_links.html.erb
+		_share_with.html.erb
+		_top_tabs_menu.html.erb
+		_user_news_interests.html.erb
+	MAIN
+		_network_links.html.erb
+		new_premium.erb
+	NETWORK
+		contacts/show.html.erb
+		HOME
+			_contact_list_table.html.erb
+			browse.html.erb
+		SOCIAL
+			_linkedin_import_form.html.erb
+			important.html.erb
+	NEWS
+		_connections.html.erb
+		_news_with_details.html.erb
+	REFERRAL
+		_contact.html.erb
+		new.html.erb
+	REGISTRATIONS
+		_reg_network_links.html.erb
+		_steps.html.erb
+		login_options.html.erb
+		signup.html.erb
+	THIRD_PARTY_AUTHENTICATION
+		create_linkedin_user.html.erb
+		linkedin_callback.html.erb
+		linkedin.html.erb
+		new_linkedin_user.html.erb
+	USER_NOTIFIER
+		DEAL_ALERT/_share.html.erb
+		dealtraction_going_live.html.erb
+		latest_rm_connections_email.html.erb
+		remind_for_lin_connection.html.erb
+		sync_notificatoin.erb
+		welcome_user.html.erb
+	WIZARD
+		_acccount.html.erb
+
+CONFIG
+	config_development.yml
+	config_internal.yml
+	config_staging.yml
+	config.yml
+	environment.rb
+	routes.rb
+	
+DB
+	MIGRATE
+		create_sources.rb
+		create_linkedin_auths.rb
+		create_contact_metas.rb
+		add_network_status_id_in_contacts.rb
+		create_linkedin_statuses.rb
+		add_index.rb
+		create_social_credentials.rb
+		create_person_connections_counts.rb
+		create_linked_throttle_limits.rb
+		add_missing_fk_indexes.rb
+		add_linkedin_count_only_first_hop_to_users.rb
+		save_linkedin_profile.rb
+	schema.rb
+	seeds.rb
+	
+DOWNLOADS/ADMIN_EXPORTS/emails_read_receipt_since_2013-09-19.csv
+
+LIB
+	TASKS
+		one_time.rake
+	auto_sync_li_contacts.rb
+	constants.rb
+	dedupe_merge.rb
+	dedupemerge_core.rb
+	linkedin_invite.rb
+	linkedin_utilities.rb
+	linkedin2.2_monkey_patch.rb
+	prioritize_interesting_news.rb
+
+PUBLIC
+	HTML/CSS/shortcodes.css
+	FONT/CSS/shortcodes.css
+	JAVASCRIPTS
+		CUSTOM/share-deal-connection.js
+		application.js
+		socialite.min.js
+	STYLESHEETS
+		landing_page.css
+		main.css
+		slick.css
+
+SPEC
+	FACTORIES/sources.rb
+	MODELS/news_spec.rb
+	
+"STATIC_UI"
+	companyShow.html
+	dashboard.html
+	my_deal_connections.html
+	preferences.html
+	step2_registration.html
+	step3_registration.html
+	step4_registration.html
+	
+GEMFILE
+"GEMFILE.lock"
+
+
+"Functionality of Linkedin"
+
+SIGNUP PAGE
+LOGIN PAGE
+DEAL ALERTS
+	YOUR NETWORK on USER page
+	SHARE ARTICLE on LINKEDIN
+NETWORKS
+	USERS ADDED BY YOU WHO SIGNUP WITH LINKEDIN ACCOUNT
