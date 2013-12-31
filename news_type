@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 user-name: si@foundation3.com
 password: annam123
 pswd_my_user: 4e7a8d5212, efda0446fd
 f/b, salesforce, google: testabc959@gmail.com/ test@123#
 index#_=_
+=======
+si@foundation3.com
+annam123
+4e7a8d5212, efda0446fd
+>>>>>>> 7a2a26304b3e16481a00f60bc60ee9ccebfc2883
 
 DATABASE db
 	interesting_news_types
